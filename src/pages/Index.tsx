@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 import { Contact } from "@/components/Contact";
+import { Timeline } from "@/components/Timeline";
 import { useEffect } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
@@ -24,6 +25,7 @@ const Index = () => {
       />
       <Hero />
       <Services />
+      <Timeline />
       <Contact />
     </div>
   );
