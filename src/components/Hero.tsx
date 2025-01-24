@@ -12,7 +12,7 @@ export const Hero = () => {
           transition={{ duration: 0.5 }}
           className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-primary/10 text-primary rounded-full"
         >
-          Boutique Web Development Agency
+          Hi there! 👋 We're Heartcode
         </motion.span>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -20,8 +20,8 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl md:text-6xl font-bold mb-6 tracking-tight"
         >
-          We craft digital experiences that{" "}
-          <span className="text-primary">matter</span>
+          Let's bring your vision to life{" "}
+          <span className="text-primary">together</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -29,16 +29,19 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
         >
-          Transform your vision into reality with our expert team of designers and
-          developers. We create beautiful, functional websites that drive results.
+          We're not just another agency – we're your dedicated partners in creating meaningful digital experiences that resonate with your audience and grow your business.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
+          className="space-x-4"
         >
           <Button size="lg" className="rounded-full">
-            Start Your Project
+            Let's Chat ☕️
+          </Button>
+          <Button size="lg" variant="outline" className="rounded-full">
+            See Our Work
           </Button>
         </motion.div>
       </div>

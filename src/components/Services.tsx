@@ -6,25 +6,25 @@ const services = [
     icon: Palette,
     title: "Web Design",
     description:
-      "Beautiful, intuitive designs that engage your audience and elevate your brand.",
+      "We'll work closely with you to create a design that perfectly captures your brand's personality and connects with your audience.",
   },
   {
     icon: Code,
     title: "Development",
     description:
-      "Custom web solutions built with modern technologies for optimal performance.",
+      "Our developers craft every line of code with care, ensuring your website is not just beautiful, but blazing fast and reliable.",
   },
   {
     icon: Search,
     title: "SEO/SEM",
     description:
-      "Strategic optimization to improve your visibility and drive qualified traffic.",
+      "Let's get your brand noticed! We'll help you reach the right people with our tailored search optimization strategies.",
   },
   {
     icon: ShoppingBag,
     title: "E-commerce",
     description:
-      "Scalable online stores that provide seamless shopping experiences.",
+      "Ready to sell online? We'll build you a store that's both beautiful and easy to use, helping you turn visitors into happy customers.",
   },
 ];
 
@@ -40,7 +40,7 @@ export const Services = () => {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            Our Services
+            How We Can Help You
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export const Services = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-muted-foreground max-w-2xl mx-auto"
           >
-            Comprehensive web solutions tailored to your unique needs
+            Every project is unique, and we're here to help you succeed in your digital journey
           </motion.p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
