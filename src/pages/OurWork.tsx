@@ -58,7 +58,7 @@ const projects = [
     id: 1,
     title: "Agrosmart",
     description: "Advanced agricultural monitoring system featuring real-time vehicle tracking, fuel consumption monitoring, mobile app integration, and comprehensive machine analytics. Includes SMS notifications, detailed reporting, and secure 24/7 monitoring for agricultural machinery.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23",
   },
   {
     id: 2,
