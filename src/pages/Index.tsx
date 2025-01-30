@@ -2,6 +2,7 @@ import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 import { Contact } from "@/components/Contact";
 import { Timeline } from "@/components/Timeline";
+import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { useEffect } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
@@ -25,6 +26,7 @@ const Index = () => {
       />
       <Hero />
       <Services />
+      <WhyChooseUs />
       <Timeline />
       <Contact />
     </div>
