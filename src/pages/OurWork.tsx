@@ -64,7 +64,7 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Cryptocurency exchange for big volume investors",
+    title: "Cryptocurency exchange",
     description: "A web application for a cryptocurrency exchange targeting high-volume investors, driving successful acquisition by a major investment corporation",
     icon: BarChart,
   },
@@ -88,7 +88,7 @@ const projects: Project[] = [
   },
   {
     id: 8,
-    title: "M-commerce platform for a widely-known eyewear brand",
+    title: "M-commerce platform",
     description: "A mobile commerce platform for a well-known eyewear brand, driving a significant increase in online sales",
     icon: Globe,
   },

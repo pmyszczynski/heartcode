@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface PortfolioItemProps {
   id: number;
@@ -17,11 +18,15 @@ const PortfolioItem = ({ title, description, icon: Icon, index }: PortfolioItemP
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group relative overflow-hidden rounded-lg"
     >
-      <div className="w-full h-64 relative group-hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-primary/80 to-secondary/80">
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-white">
-          {Icon && <Icon className="w-12 h-12 mb-4" />}
-          <h3 className="text-xl font-semibold mb-2">{title}</h3>
-          <p className="text-white/80 text-center">{description}</p>
+      <div className="w-full h-64 relative group-hover:scale-105 transition-transform duration-300 bg-card border shadow-sm">
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+          {Icon && (
+            <div className="mb-4 p-3 rounded-lg bg-primary/10">
+              <Icon className="w-8 h-8 text-primary" />
+            </div>
+          )}
+          <h3 className="text-xl font-semibold mb-2 text-card-foreground">{title}</h3>
+          <p className="text-muted-foreground text-center">{description}</p>
         </div>
       </div>
     </motion.div>
