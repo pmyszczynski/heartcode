@@ -3,6 +3,13 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export const Hero = () => {
+  const handleChatClick = () => {
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-[80vh] flex items-center justify-center px-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-muted to-transparent" />
@@ -38,7 +45,11 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="space-x-4"
         >
-          <Button size="lg" className="rounded-full">
+          <Button 
+            size="lg" 
+            className="rounded-full"
+            onClick={handleChatClick}
+          >
             Let's Chat ☕️
           </Button>
           <Link to="/our-work">
