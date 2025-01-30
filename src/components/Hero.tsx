@@ -43,17 +43,17 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="space-x-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button 
             size="lg" 
-            className="rounded-full"
+            className="rounded-full w-full sm:w-auto"
             onClick={handleChatClick}
           >
             Let's Chat ☕️
           </Button>
-          <Link to="/our-work">
-            <Button size="lg" variant="outline" className="rounded-full">
+          <Link to="/our-work" className="w-full sm:w-auto">
+            <Button size="lg" variant="outline" className="rounded-full w-full sm:w-auto">
               See Our Work
             </Button>
           </Link>
