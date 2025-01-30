@@ -27,7 +27,7 @@ export const WhyChooseUs = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Heartcode</h2>
@@ -44,8 +44,8 @@ export const WhyChooseUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ 
-                duration: 0.6, 
-                delay: index * 0.2,
+                duration: 1.2, 
+                delay: index * 0.4,
                 ease: "easeOut"
               }}
               className="bg-background p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
