@@ -86,3 +86,6 @@ export class FirecrawlService {
     }
   }
 }
+
+// Initialize the API key
+FirecrawlService.saveApiKey('fc-5fcf908c97ad4c159dc17829ad919b02');
