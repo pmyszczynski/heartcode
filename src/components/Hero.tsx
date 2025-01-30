@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -40,9 +41,11 @@ export const Hero = () => {
           <Button size="lg" className="rounded-full">
             Let's Chat ☕️
           </Button>
-          <Button size="lg" variant="outline" className="rounded-full">
-            See Our Work
-          </Button>
+          <Link to="/our-work">
+            <Button size="lg" variant="outline" className="rounded-full">
+              See Our Work
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>
