@@ -34,31 +34,13 @@ const OurWork = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative overflow-hidden rounded-lg"
             >
-              {project.image ? (
-                // Image-based portfolio item
-                <>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-white text-xl font-semibold mb-2">{project.title}</h3>
-                      <p className="text-white/80">{project.description}</p>
-                    </div>
-                  </div>
-                </>
-              ) : (
-                // Non-image portfolio item with gradient background
-                <div className="w-full h-64 relative group-hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-primary/80 to-secondary/80">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-white">
-                    {project.icon && <project.icon className="w-12 h-12 mb-4" />}
-                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                    <p className="text-white/80 text-center">{project.description}</p>
-                  </div>
+              <div className="w-full h-64 relative group-hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-primary/80 to-secondary/80">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-white">
+                  {project.icon && <project.icon className="w-12 h-12 mb-4" />}
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-white/80 text-center">{project.description}</p>
                 </div>
-              )}
+              </div>
             </motion.div>
           ))}
         </div>
@@ -72,7 +54,6 @@ const projects = [
     id: 1,
     title: "Agrosmart",
     description: "Advanced agricultural monitoring system featuring real-time vehicle tracking, fuel consumption monitoring, mobile app integration, and comprehensive machine analytics. Includes SMS notifications, detailed reporting, and secure 24/7 monitoring for agricultural machinery.",
-    image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23",
     icon: Cpu
   },
   {
