@@ -56,8 +56,8 @@ const OurWork = () => {
 const projects = [
   {
     id: 1,
-    title: "Professional Telemetry & Logistics System",
-    description: "Advanced IoT platform revolutionizing agricultural logistics with real-time monitoring, smart sensors, and automated fleet management. Features comprehensive data analytics for optimizing operations and resource utilization.",
+    title: "Agrosmart",
+    description: "Advanced agricultural monitoring system featuring real-time vehicle tracking, fuel consumption monitoring, mobile app integration, and comprehensive machine analytics. Includes SMS notifications, detailed reporting, and secure 24/7 monitoring for agricultural machinery.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
   },
   {
