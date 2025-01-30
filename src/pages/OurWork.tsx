@@ -61,12 +61,6 @@ const OurWork = () => {
 
 const projects = [
   {
-    id: 1,
-    title: "Professional Telemetry & Logistics System",
-    description: "Advanced IoT platform for real-time monitoring and logistics optimization, featuring smart data analytics and automated fleet management.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-  },
-  {
     id: 2,
     title: "Tech Startup Website",
     description: "Clean and modern website for an innovative startup",
