@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { CrawlForm } from "@/components/CrawlForm";
 
 const OurWork = () => {
   return (
@@ -20,9 +21,14 @@ const OurWork = () => {
             </Button>
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Work</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <p className="text-lg text-muted-foreground max-w-2xl mb-8">
             Explore our portfolio of successful projects where we've helped businesses transform their digital presence.
           </p>
+          
+          <div className="mb-12">
+            <h2 className="text-2xl font-semibold mb-4">Add New Project</h2>
+            <CrawlForm />
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
