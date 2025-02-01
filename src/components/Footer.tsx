@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Globe, Copyright, Github, Linkedin } from "lucide-react";
+import { Mail, Globe, Copyright } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -55,14 +55,6 @@ export const Footer = () => {
                 </a>
               </li>
             </ul>
-            <div className="flex gap-4 pt-2">
-              <a href="https://github.com/heartcode" className="text-muted-foreground hover:text-primary transition-colors">
-                <Github className="h-5 w-5" />
-              </a>
-              <a href="https://linkedin.com/company/heartcode" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
           </div>
         </div>
 
