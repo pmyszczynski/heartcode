@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Cpu, Globe, BookOpen, BarChart, Users, LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
-import PortfolioItem from "@/components/PortfolioItem";
+import { PortfolioItem } from "@/components/PortfolioItem";
 
 interface Project {
   id: number;
