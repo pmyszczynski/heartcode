@@ -10,7 +10,7 @@ interface PortfolioItemProps {
   index: number;
 }
 
-const PortfolioItem = ({ title, description, icon: Icon, index }: PortfolioItemProps) => {
+export const PortfolioItem = ({ title, description, icon: Icon, index }: PortfolioItemProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -32,5 +32,3 @@ const PortfolioItem = ({ title, description, icon: Icon, index }: PortfolioItemP
     </motion.div>
   );
 };
-
-export default PortfolioItem; 

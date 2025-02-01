@@ -21,19 +21,25 @@ const OurWork = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <PortfolioItem
+            id={1}
             title="Agrosmart"
             description="Smart agricultural monitoring system with real-time tracking and analytics."
-            icon={<Cpu className="h-6 w-6" />}
+            icon={Cpu}
+            index={0}
           />
           <PortfolioItem
+            id={2}
             title="Creative Studio"
             description="Brand identity and website redesign for a digital art studio."
-            icon={<PenTool className="h-6 w-6" />}
+            icon={PenTool}
+            index={1}
           />
           <PortfolioItem
+            id={3}
             title="EcoShop"
             description="Full-featured e-commerce platform for sustainable products."
-            icon={<ShoppingCart className="h-6 w-6" />}
+            icon={ShoppingCart}
+            index={2}
           />
         </div>
       </div>
