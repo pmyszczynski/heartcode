@@ -44,14 +44,14 @@ export const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:hello@heartcode.dev" className="hover:text-primary transition-colors">
-                  hello@heartcode.dev
+                <a href="mailto:hello@heartcode.io" className="hover:text-primary transition-colors">
+                  hello@heartcode.io
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Globe className="h-4 w-4" />
-                <a href="https://heartcode.dev" className="hover:text-primary transition-colors">
-                  heartcode.dev
+                <a href="https://heartcode.io" className="hover:text-primary transition-colors">
+                  heartcode.io
                 </a>
               </li>
             </ul>
