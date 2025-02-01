@@ -3,6 +3,7 @@ import { Services } from "@/components/Services";
 import { Contact } from "@/components/Contact";
 import { Timeline } from "@/components/Timeline";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { Footer } from "@/components/Footer";
 import { useEffect } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
@@ -29,6 +30,7 @@ const Index = () => {
       <WhyChooseUs />
       <Timeline />
       <Contact />
+      <Footer />
     </div>
   );
 };
