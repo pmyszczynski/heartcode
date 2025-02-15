@@ -1,8 +1,10 @@
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Cpu, Globe, BookOpen, BarChart, Users, LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PortfolioItem } from "@/components/PortfolioItem";
+import { SEO } from "@/components/SEO";
 
 interface Project {
   id: number;
@@ -12,8 +14,31 @@ interface Project {
 }
 
 const OurWork = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Our Work - Heartcode Portfolio",
+    "description": "Explore our portfolio of successful projects where we've helped businesses transform their digital presence.",
+    "url": "https://heartcode.io/our-work",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": projects.map((project, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": project.title,
+        "description": project.description,
+        "url": `https://heartcode.io/our-work#${project.id}`
+      }))
+    }
+  };
+
   return (
     <div className="min-h-screen py-16 px-4">
+      <SEO 
+        title="Our Work - Heartcode Portfolio"
+        description="Explore our portfolio of successful projects where we've helped businesses transform their digital presence."
+        schema={schema}
+      />
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
