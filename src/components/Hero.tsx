@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -11,14 +12,18 @@ export const Hero = () => {
   };
 
   return (
-    <section className="min-h-[80vh] flex items-center justify-center px-4 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-muted to-transparent" />
+    <section 
+      className="min-h-[80vh] flex items-center justify-center px-4 relative overflow-hidden"
+      aria-label="Hero section"
+    >
+      <div className="absolute inset-0 bg-gradient-to-b from-muted to-transparent" role="presentation" />
       <div className="container mx-auto text-center relative z-10">
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-primary/10 text-primary rounded-full"
+          role="text"
         >
           Hi there! 👋 We're Heartcode
         </motion.span>
@@ -49,11 +54,17 @@ export const Hero = () => {
             size="lg" 
             className="rounded-full w-full sm:w-auto"
             onClick={handleChatClick}
+            aria-label="Start chat"
           >
             Let's Chat ☕️
           </Button>
           <Link to="/our-work" className="w-full sm:w-auto">
-            <Button size="lg" variant="outline" className="rounded-full w-full sm:w-auto">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="rounded-full w-full sm:w-auto"
+              aria-label="View our work"
+            >
               See Our Work
             </Button>
           </Link>

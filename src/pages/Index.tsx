@@ -39,11 +39,13 @@ const Index = () => {
   };
 
   return (
-    <div className="relative">
+    <main className="relative" role="main">
       <SEO schema={schema} />
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-50"
         style={{ scaleX }}
+        role="progressbar"
+        aria-label="Page scroll progress"
       />
       <Hero />
       <Services />
@@ -51,7 +53,7 @@ const Index = () => {
       <Timeline />
       <Contact />
       <Footer />
-    </div>
+    </main>
   );
 };
 
