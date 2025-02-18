@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Mail, Globe, Copyright } from "lucide-react";
 
@@ -22,7 +23,7 @@ export const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">Web Development</Link></li>
               <li><Link to="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">UI/UX Design</Link></li>
-              <li><Link to="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">E-commerce Solutions</Link></li>
+              <li><Link to="/tech-consulting" className="text-sm text-muted-foreground hover:text-primary transition-colors">Tech Consulting</Link></li>
               <li><Link to="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO/SEM</Link></li>
             </ul>
           </div>
