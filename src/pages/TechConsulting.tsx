@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Code, Server, Database, Shield, GitBranch, Workflow, Brain, Terminal, Layout } from "lucide-react";
+import { ArrowLeft, Code, Server, Database, Shield, GitBranch, Workflow, Brain, Terminal } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+
 const TechConsulting = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -13,6 +14,7 @@ const TechConsulting = () => {
     "jobTitle": "Senior Full-Stack Engineer",
     "knowsAbout": ["Node.js", "PHP", "Ruby", "Web Development", "System Architecture", "API Design"]
   };
+
   const expertise = [{
     icon: Code,
     title: "Full-Stack Development",
@@ -41,11 +43,8 @@ const TechConsulting = () => {
     icon: GitBranch,
     title: "Legacy Transformation",
     description: "Strategic modernization of legacy systems while maintaining business continuity."
-  }, {
-    icon: Layout,
-    title: "UI/UX Architecture",
-    description: "Design and implementation of intuitive, responsive user interfaces using modern frameworks."
   }];
+
   return <main className="min-h-screen">
       <SEO title="Tech Consulting - Piotr Myszczyński" description="Senior Full-Stack Engineer with over 11 years of experience, providing expert technology consulting and development solutions." schema={schema} />
       
@@ -178,4 +177,5 @@ const TechConsulting = () => {
       <Footer />
     </main>;
 };
+
 export default TechConsulting;
