@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Code, Server, Database, Shield, GitBranch, Workflow, Brain, Terminal } from "lucide-react";
+import { ArrowLeft, Code, Server, Database, Shield, GitBranch, Workflow, Brain, Terminal, MessageSquareCode, FileSliders } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 
@@ -43,6 +43,14 @@ const TechConsulting = () => {
     icon: GitBranch,
     title: "Legacy Transformation",
     description: "Strategic modernization of legacy systems while maintaining business continuity."
+  }, {
+    icon: MessageSquareCode,
+    title: "Software Consulting",
+    description: "Expert guidance across web, backend, and enterprise technologies to help you make informed technical decisions."
+  }, {
+    icon: FileSliders,
+    title: "Stack Assessment",
+    description: "Comprehensive evaluation of software performance and architecture to identify optimization opportunities and modernization paths."
   }];
 
   return <main className="min-h-screen">
