@@ -1,9 +1,46 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
+import { useState } from "react";
 
 export const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const form = e.target as HTMLFormElement;
+      await emailjs.sendForm(
+        'YOUR_SERVICE_ID', // You'll need to replace this
+        'YOUR_TEMPLATE_ID', // You'll need to replace this
+        form,
+        'YOUR_PUBLIC_KEY' // You'll need to replace this
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you as soon as possible.",
+      });
+
+      form.reset();
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Something went wrong!",
+        description: "Please try again later or contact us through other means.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4">
@@ -23,6 +60,7 @@ export const Contact = () => {
             </p>
           </motion.div>
           <motion.form
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -33,15 +71,19 @@ export const Contact = () => {
               <div className="space-y-2">
                 <label className="text-sm font-medium">Your Name</label>
                 <Input
+                  name="user_name"
                   placeholder="John Doe"
+                  required
                   className="bg-secondary-foreground/5 border-secondary-foreground/10"
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium">Email</label>
                 <Input
+                  name="user_email"
                   type="email"
                   placeholder="john@example.com"
+                  required
                   className="bg-secondary-foreground/5 border-secondary-foreground/10"
                 />
               </div>
@@ -49,19 +91,28 @@ export const Contact = () => {
             <div className="space-y-2">
               <label className="text-sm font-medium">Project Type</label>
               <Input
+                name="project_type"
                 placeholder="Website, E-commerce, or something else?"
+                required
                 className="bg-secondary-foreground/5 border-secondary-foreground/10"
               />
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">Tell us about your project</label>
               <Textarea
+                name="message"
                 placeholder="Share your ideas, goals, and timeline..."
+                required
                 className="bg-secondary-foreground/5 border-secondary-foreground/10 min-h-[150px]"
               />
             </div>
-            <Button size="lg" className="w-full rounded-full">
-              Let's Make Something Amazing 🚀
+            <Button 
+              type="submit" 
+              size="lg" 
+              className="w-full rounded-full"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Sending..." : "Let's Make Something Amazing 🚀"}
             </Button>
           </motion.form>
         </div>
