@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Code, Server, Database, Shield, Git, Workflow, Brain, Terminal, Layout } from "lucide-react";
+import { ArrowLeft, Code, Server, Database, Shield, GitBranch, Workflow, Brain, Terminal, Layout } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 
@@ -48,7 +48,7 @@ const TechConsulting = () => {
       description: "Implementation of robust security measures and performance optimization across all application layers."
     },
     {
-      icon: Git,
+      icon: GitBranch,
       title: "Legacy Transformation",
       description: "Strategic modernization of legacy systems while maintaining business continuity."
     },
