@@ -4,6 +4,7 @@ import { Services } from "@/components/Services";
 import { Contact } from "@/components/Contact";
 import { Timeline } from "@/components/Timeline";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { BlogPreview } from "@/components/blog/BlogPreview";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useEffect } from "react";
@@ -51,6 +52,7 @@ const Index = () => {
       <Services />
       <WhyChooseUs />
       <Timeline />
+      <BlogPreview />
       <Contact />
       <Footer />
     </main>
