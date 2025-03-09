@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
 import { useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -18,10 +19,10 @@ export const Contact = () => {
     try {
       const form = e.target as HTMLFormElement;
       await emailjs.sendForm(
-        'YOUR_SERVICE_ID', // You'll need to replace this
-        'YOUR_TEMPLATE_ID', // You'll need to replace this
+        'service_id', // Replace with your EmailJS service ID
+        'template_id', // Replace with your EmailJS template ID
         form,
-        'YOUR_PUBLIC_KEY' // You'll need to replace this
+        'public_key' // Replace with your EmailJS public key
       );
 
       toast({
@@ -31,6 +32,7 @@ export const Contact = () => {
 
       form.reset();
     } catch (error) {
+      console.error("EmailJS error:", error);
       toast({
         variant: "destructive",
         title: "Something went wrong!",
@@ -59,6 +61,14 @@ export const Contact = () => {
               Have a project in mind? We'd love to hear about it. Drop us a message, and we'll get back to you within 24 hours.
             </p>
           </motion.div>
+          
+          <Alert className="mb-6 bg-secondary-foreground/5 border-primary/30">
+            <AlertDescription>
+              To configure EmailJS: Sign up at emailjs.com, create a service, template, and get your public key. 
+              Then replace the placeholder values in the code with your actual IDs.
+            </AlertDescription>
+          </Alert>
+          
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 20 }}
