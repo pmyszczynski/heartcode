@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import OurWork from "./pages/OurWork";
 import ClientForm from "./pages/ClientForm";
 import TechConsulting from "./pages/TechConsulting";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/our-work" element={<OurWork />} />
           <Route path="/get-started" element={<ClientForm />} />
           <Route path="/tech-consulting" element={<TechConsulting />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
