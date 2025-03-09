@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Clock, FileSearch, Wrench, CheckCircle, HeartHandshake } from "lucide-react";
 
@@ -31,7 +32,7 @@ const steps = [
 
 export const Timeline = () => {
   return (
-    <section className="py-24 bg-white">
+    <section id="timeline" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
