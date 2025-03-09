@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Cog, Target, Handshake } from "lucide-react";
 const features = [{
@@ -14,7 +15,7 @@ const features = [{
   description: "We work hand-in-hand with our clients, analyzing their unique needs to craft tailored solutions that exceed expectations."
 }];
 export const WhyChooseUs = () => {
-  return <section className="py-24 bg-muted">
+  return <section id="why-choose-us" className="py-24 bg-muted">
       <div className="container mx-auto px-4">
         <motion.div initial={{
         opacity: 0,
