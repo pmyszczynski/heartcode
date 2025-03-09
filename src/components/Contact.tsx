@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,10 +18,10 @@ export const Contact = () => {
     try {
       const form = e.target as HTMLFormElement;
       await emailjs.sendForm(
-        'service_id', // Replace with your EmailJS service ID
-        'template_id', // Replace with your EmailJS template ID
+        'service_5mcp4mn', // Your EmailJS service ID
+        'template_tli2vp2', // Your EmailJS template ID
         form,
-        'public_key' // Replace with your EmailJS public key
+        'oQSA1wWeEGXhTL-dn' // Your EmailJS public key
       );
 
       toast({
@@ -61,13 +60,6 @@ export const Contact = () => {
               Have a project in mind? We'd love to hear about it. Drop us a message, and we'll get back to you within 24 hours.
             </p>
           </motion.div>
-          
-          <Alert className="mb-6 bg-secondary-foreground/5 border-primary/30">
-            <AlertDescription>
-              To configure EmailJS: Sign up at emailjs.com, create a service, template, and get your public key. 
-              Then replace the placeholder values in the code with your actual IDs.
-            </AlertDescription>
-          </Alert>
           
           <motion.form
             onSubmit={handleSubmit}
