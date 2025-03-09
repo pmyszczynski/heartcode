@@ -21,10 +21,10 @@ export const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">Web Development</Link></li>
-              <li><Link to="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">UI/UX Design</Link></li>
+              <li><a href="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">Web Development</a></li>
+              <li><a href="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">UI/UX Design</a></li>
               <li><Link to="/tech-consulting" className="text-sm text-muted-foreground hover:text-primary transition-colors">Tech Consulting</Link></li>
-              <li><Link to="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO/SEM</Link></li>
+              <li><a href="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO/SEM</a></li>
             </ul>
           </div>
 
@@ -33,9 +33,9 @@ export const Footer = () => {
             <h3 className="font-semibold text-lg">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link to="/our-work" className="text-sm text-muted-foreground hover:text-primary transition-colors">Our Work</Link></li>
-              <li><Link to="/#why-choose-us" className="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link to="/#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
-              <li><Link to="/#timeline" className="text-sm text-muted-foreground hover:text-primary transition-colors">Process</Link></li>
+              <li><a href="/#why-choose-us" className="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
+              <li><a href="/#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
+              <li><a href="/#timeline" className="text-sm text-muted-foreground hover:text-primary transition-colors">Process</a></li>
             </ul>
           </div>
 

@@ -1,3 +1,4 @@
+
 import { Code, Palette, Search, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -30,7 +31,7 @@ const services = [
 
 export const Services = () => {
   return (
-    <section className="py-24 bg-muted">
+    <section id="services" className="py-24 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2
