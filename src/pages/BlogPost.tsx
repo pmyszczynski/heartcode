@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
@@ -7,6 +6,15 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { BlogPostContent } from "@/types/blog";
+
+// Add types for ReactMarkdown components props
+type MarkdownComponentProps = {
+  node?: any;
+  inline?: boolean;
+  className?: string;
+  children?: React.ReactNode;
+  [key: string]: any;
+}
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -312,17 +320,17 @@ Thank you for reading this sample blog post!
             <ReactMarkdown 
               remarkPlugins={[remarkGfm]}
               components={{
-                h1: ({node, ...props}) => <h1 className="mt-2 mb-6 text-3xl font-bold" {...props} />,
-                h2: ({node, ...props}) => <h2 className="mt-10 mb-4 text-2xl font-bold" {...props} />,
-                h3: ({node, ...props}) => <h3 className="mt-8 mb-3 text-xl font-bold" {...props} />,
-                h4: ({node, ...props}) => <h4 className="mt-6 mb-2 text-lg font-bold" {...props} />,
-                ul: ({node, ...props}) => <ul className="my-6 ml-6 list-disc" {...props} />,
-                ol: ({node, ...props}) => <ol className="my-6 ml-6 list-decimal" {...props} />,
-                li: ({node, ...props}) => <li className="mt-2" {...props} />,
-                p: ({node, ...props}) => <p className="leading-7 mb-6" {...props} />,
-                a: ({node, ...props}) => <a className="font-medium underline underline-offset-4" {...props} />,
-                blockquote: ({node, ...props}) => <blockquote className="mt-6 border-l-2 pl-6 italic" {...props} />,
-                code: ({node, inline, ...props}) => 
+                h1: ({node, ...props}: MarkdownComponentProps) => <h1 className="mt-2 mb-6 text-3xl font-bold" {...props} />,
+                h2: ({node, ...props}: MarkdownComponentProps) => <h2 className="mt-10 mb-4 text-2xl font-bold" {...props} />,
+                h3: ({node, ...props}: MarkdownComponentProps) => <h3 className="mt-8 mb-3 text-xl font-bold" {...props} />,
+                h4: ({node, ...props}: MarkdownComponentProps) => <h4 className="mt-6 mb-2 text-lg font-bold" {...props} />,
+                ul: ({node, ...props}: MarkdownComponentProps) => <ul className="my-6 ml-6 list-disc" {...props} />,
+                ol: ({node, ...props}: MarkdownComponentProps) => <ol className="my-6 ml-6 list-decimal" {...props} />,
+                li: ({node, ...props}: MarkdownComponentProps) => <li className="mt-2" {...props} />,
+                p: ({node, ...props}: MarkdownComponentProps) => <p className="leading-7 mb-6" {...props} />,
+                a: ({node, ...props}: MarkdownComponentProps) => <a className="font-medium underline underline-offset-4" {...props} />,
+                blockquote: ({node, ...props}: MarkdownComponentProps) => <blockquote className="mt-6 border-l-2 pl-6 italic" {...props} />,
+                code: ({node, inline, ...props}: MarkdownComponentProps) => 
                   inline ? (
                     <code className="rounded bg-muted px-1 py-0.5 font-mono text-sm" {...props} />
                   ) : (
