@@ -28,8 +28,6 @@ const BlogPost = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        // In production, this would fetch from a real API
-        // For development, we'll use placeholder content
         if (slug) {
           // First try to fetch from the API
           try {
@@ -39,10 +37,16 @@ const BlogPost = () => {
               const postData = posts.find((p: any) => p.slug === slug);
               
               if (postData) {
-                // We found the post metadata, now create the full post with content
-                const mockPost: BlogPostContent = {
-                  ...postData,
-                  content: `
+                if (postData.content) {
+                  // If the post already has content, use it directly
+                  setPost(postData as BlogPostContent);
+                  setLoading(false);
+                  return;
+                } else {
+                  // We found the post metadata, now create the full post with mock content
+                  const mockPost: BlogPostContent = {
+                    ...postData,
+                    content: `
 # ${postData.title}
 
 ${postData.excerpt}
@@ -72,11 +76,12 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac tu
 
 Thank you for reading this blog post!
 `
-                };
-                
-                setPost(mockPost);
-                setLoading(false);
-                return;
+                  };
+                  
+                  setPost(mockPost);
+                  setLoading(false);
+                  return;
+                }
               }
             }
           } catch (err) {
@@ -237,10 +242,10 @@ Thank you for reading this sample blog post!
   return (
     <main className="relative min-h-screen" role="main">
       <SEO 
-        title={`${post.title} | Heartcode Blog`}
-        description={post.excerpt}
-        image={post.coverImage}
-        schema={generateArticleSchema(post)}
+        title={`${post?.title || 'Blog Post'} | Heartcode Blog`}
+        description={post?.excerpt || ''}
+        image={post?.coverImage || ''}
+        schema={post ? generateArticleSchema(post) : undefined}
         type="article"
       />
       <motion.div
@@ -257,17 +262,23 @@ Thank you for reading this sample blog post!
             <Link to="/blog" className="inline-flex items-center text-muted-foreground hover:text-primary mb-6">
               ← Back to all posts
             </Link>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">{post?.title || 'Loading...'}</h1>
             <div className="flex items-center text-muted-foreground">
-              <time dateTime={post.date}>
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </time>
-              <span className="mx-2">•</span>
-              <span>{post.author}</span>
+              {post?.date && (
+                <time dateTime={post.date}>
+                  {new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </time>
+              )}
+              {post?.author && (
+                <>
+                  <span className="mx-2">•</span>
+                  <span>{post.author}</span>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -278,8 +289,8 @@ Thank you for reading this sample blog post!
         <div className="max-w-4xl mx-auto">
           <div className="aspect-[16/9] rounded-lg overflow-hidden mb-8">
             <img 
-              src={post.coverImage} 
-              alt={`Cover image for article: ${post.title}`} 
+              src={post?.coverImage || '/placeholder.svg'} 
+              alt={`Cover image for article: ${post?.title || 'Blog post'}`} 
               className="w-full h-full object-cover"
               width="800"
               height="450"
@@ -297,9 +308,11 @@ Thank you for reading this sample blog post!
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {post.content}
-          </ReactMarkdown>
+          {post?.content && (
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {post.content}
+            </ReactMarkdown>
+          )}
         </motion.article>
       </div>
       
