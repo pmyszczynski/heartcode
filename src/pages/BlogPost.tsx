@@ -303,13 +303,33 @@ Thank you for reading this sample blog post!
       {/* Blog Content */}
       <div className="container mx-auto px-4 pb-16">
         <motion.article 
-          className="max-w-4xl mx-auto prose prose-lg"
+          className="max-w-4xl mx-auto prose prose-lg lg:prose-xl dark:prose-invert prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-primary prose-code:text-primary"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
           {post?.content && (
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            <ReactMarkdown 
+              remarkPlugins={[remarkGfm]}
+              components={{
+                h1: ({node, ...props}) => <h1 className="mt-2 mb-6 text-3xl font-bold" {...props} />,
+                h2: ({node, ...props}) => <h2 className="mt-10 mb-4 text-2xl font-bold" {...props} />,
+                h3: ({node, ...props}) => <h3 className="mt-8 mb-3 text-xl font-bold" {...props} />,
+                h4: ({node, ...props}) => <h4 className="mt-6 mb-2 text-lg font-bold" {...props} />,
+                ul: ({node, ...props}) => <ul className="my-6 ml-6 list-disc" {...props} />,
+                ol: ({node, ...props}) => <ol className="my-6 ml-6 list-decimal" {...props} />,
+                li: ({node, ...props}) => <li className="mt-2" {...props} />,
+                p: ({node, ...props}) => <p className="leading-7 mb-6" {...props} />,
+                a: ({node, ...props}) => <a className="font-medium underline underline-offset-4" {...props} />,
+                blockquote: ({node, ...props}) => <blockquote className="mt-6 border-l-2 pl-6 italic" {...props} />,
+                code: ({node, inline, ...props}) => 
+                  inline ? (
+                    <code className="rounded bg-muted px-1 py-0.5 font-mono text-sm" {...props} />
+                  ) : (
+                    <code className="block bg-muted p-4 rounded-md font-mono text-sm overflow-x-auto" {...props} />
+                  )
+              }}
+            >
               {post.content}
             </ReactMarkdown>
           )}
