@@ -6,14 +6,16 @@ interface SEOProps {
   title?: string;
   description?: string;
   image?: string;
-  schema?: object;
+  schema?: object | object[];
+  type?: 'website' | 'article' | 'blog' | 'product' | 'organization';
 }
 
 export const SEO = ({ 
   title = "Heartcode - Web Development Agency",
   description = "Crafting exceptional digital experiences through innovative web development solutions.",
   image = "/og-image.png",
-  schema
+  schema,
+  type = "website"
 }: SEOProps) => {
   const location = useLocation();
   const currentUrl = `https://heartcode.io${location.pathname}`;
@@ -26,6 +28,7 @@ export const SEO = ({
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
     document.querySelector('meta[property="og:image"]')?.setAttribute('content', image);
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', currentUrl);
+    document.querySelector('meta[property="og:type"]')?.setAttribute('content', type);
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', description);
     document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', image);
@@ -44,7 +47,7 @@ export const SEO = ({
       script.text = JSON.stringify(schema);
       document.head.appendChild(script);
     }
-  }, [title, description, image, schema, currentUrl]);
+  }, [title, description, image, schema, currentUrl, type]);
 
   return null;
 };

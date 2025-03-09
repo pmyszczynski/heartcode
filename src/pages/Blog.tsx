@@ -18,7 +18,7 @@ const Blog = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const schema = {
+  const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "Heartcode Blog",
@@ -29,8 +29,27 @@ const Blog = () => {
       "name": "Heartcode",
       "logo": {
         "@type": "ImageObject",
-        "url": "/og-image.png"
+        "url": "https://heartcode.io/og-image.png",
+        "width": 1200,
+        "height": 630
       }
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "BlogPosting",
+          "position": 1,
+          "url": "https://heartcode.io/blog/the-importance-of-responsive-design",
+          "name": "The Importance of Responsive Design"
+        },
+        {
+          "@type": "BlogPosting",
+          "position": 2,
+          "url": "https://heartcode.io/blog/optimizing-website-performance",
+          "name": "Optimizing Website Performance"
+        }
+      ]
     }
   };
 
@@ -38,8 +57,9 @@ const Blog = () => {
     <main className="relative min-h-screen" role="main">
       <SEO 
         title="Blog | Heartcode - Web Development Agency"
-        description="Insights and updates on web development, design, and technology"
-        schema={schema}
+        description="Insights and updates on web development, design, and technology from the Heartcode team"
+        schema={blogSchema}
+        type="blog"
       />
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-50"

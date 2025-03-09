@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -21,14 +20,6 @@ export const BlogList = () => {
         console.error('Error loading blog posts:', error);
         // Set some placeholder posts for development
         setPosts([
-          {
-            slug: 'getting-started-with-web-development',
-            title: 'Getting Started with Web Development',
-            date: '2024-04-25',
-            excerpt: 'A comprehensive guide for beginners looking to start their journey in web development.',
-            author: 'Heartcode Team',
-            coverImage: '/placeholder.svg'
-          },
           {
             slug: 'the-importance-of-responsive-design',
             title: 'The Importance of Responsive Design',
@@ -98,18 +89,23 @@ export const BlogList = () => {
                     <div className="aspect-video overflow-hidden">
                       <img 
                         src={post.coverImage} 
-                        alt={post.title} 
+                        alt={`Cover image for ${post.title}`} 
                         className="w-full h-full object-cover transition-transform hover:scale-105"
+                        width="400"
+                        height="225"
+                        loading={index < 3 ? "eager" : "lazy"}
                       />
                     </div>
                     <CardHeader>
                       <CardTitle>{post.title}</CardTitle>
                       <CardDescription>
-                        {new Date(post.date).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })} • {post.author}
+                        <time dateTime={post.date}>
+                          {new Date(post.date).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}
+                        </time> • {post.author}
                       </CardDescription>
                     </CardHeader>
                     <CardContent>

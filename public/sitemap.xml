@@ -1,22 +1,55 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://heartcode.io/</loc>
     <lastmod>2024-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://heartcode.io/og-image.png</image:loc>
+      <image:caption>Heartcode - Web Development Agency</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://heartcode.io/our-work</loc>
     <lastmod>2024-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://heartcode.io/og-image.png</image:loc>
+      <image:caption>Our Work - Heartcode Portfolio</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://heartcode.io/blog</loc>
     <lastmod>2024-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://heartcode.io/og-image.png</image:loc>
+      <image:caption>Blog | Heartcode - Web Development Agency</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://heartcode.io/blog/the-importance-of-responsive-design</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://heartcode.io/placeholder.svg</image:loc>
+      <image:caption>The Importance of Responsive Design</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://heartcode.io/blog/optimizing-website-performance</loc>
+    <lastmod>2024-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://heartcode.io/placeholder.svg</image:loc>
+      <image:caption>Optimizing Website Performance</image:caption>
+    </image:image>
   </url>
 </urlset>

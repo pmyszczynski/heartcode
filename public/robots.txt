@@ -10,3 +10,13 @@ Sitemap: https://heartcode.io/sitemap.xml
 Disallow: /private/
 Disallow: /admin/
 Disallow: /api/
+
+# Allow images and assets to be crawled
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
+
+# Crawl delays to prevent server overload
+Crawl-delay: 10

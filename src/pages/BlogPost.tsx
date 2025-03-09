@@ -31,13 +31,66 @@ const BlogPost = () => {
         // In production, this would fetch from a real API
         // For development, we'll use placeholder content
         if (slug) {
-          // Simulate API call
+          // First try to fetch from the API
+          try {
+            const response = await fetch(`/api/blog-posts.json`);
+            if (response.ok) {
+              const posts = await response.json();
+              const postData = posts.find((p: any) => p.slug === slug);
+              
+              if (postData) {
+                // We found the post metadata, now create the full post with content
+                const mockPost: BlogPostContent = {
+                  ...postData,
+                  content: `
+# ${postData.title}
+
+${postData.excerpt}
+
+## Introduction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. 
+
+* Item one
+* Item two
+* Item three
+
+## Main Content
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+\`\`\`javascript
+// Sample code block
+function helloWorld() {
+  console.log("Hello, world!");
+}
+\`\`\`
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+## Conclusion
+
+Thank you for reading this blog post!
+`
+                };
+                
+                setPost(mockPost);
+                setLoading(false);
+                return;
+              }
+            }
+          } catch (err) {
+            console.error("Error fetching from API:", err);
+            // Continue to fallback
+          }
+          
+          // Fallback content
           const mockPost: BlogPostContent = {
             slug,
-            title: "Sample Blog Post",
+            title: slug.split('-').join(' ').replace(/\b\w/g, l => l.toUpperCase()),
             date: "2024-04-25",
             author: "Heartcode Team",
-            excerpt: "This is a sample blog post excerpt.", // Added the missing excerpt property
+            excerpt: "This is a sample blog post about " + slug.split('-').join(' ') + ".",
             coverImage: "/placeholder.svg",
             content: `
 # ${slug.split('-').join(' ').replace(/\b\w/g, l => l.toUpperCase())}
@@ -84,26 +137,42 @@ Thank you for reading this sample blog post!
     fetchPost();
   }, [slug]);
 
-  const schema = post ? {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.title,
-    "datePublished": post.date,
-    "author": {
-      "@type": "Person",
-      "name": post.author
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Heartcode",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "/og-image.png"
-      }
-    },
-    "image": post.coverImage,
-    "url": `https://heartcode.io/blog/${slug}`
-  } : {};
+  const generateArticleSchema = (post: BlogPostContent) => {
+    const articleSchema = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "datePublished": post.date,
+      "dateModified": post.date,
+      "author": {
+        "@type": "Person",
+        "name": post.author
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://heartcode.io/blog/${post.slug}`
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Heartcode",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://heartcode.io/og-image.png",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      "image": [
+        `https://heartcode.io${post.coverImage}`
+      ],
+      "url": `https://heartcode.io/blog/${post.slug}`,
+      "keywords": post.slug.split('-'),
+      "articleBody": post.content.replace(/[#*`]/g, '')
+    };
+
+    return articleSchema;
+  };
 
   if (loading) {
     return (
@@ -169,9 +238,10 @@ Thank you for reading this sample blog post!
     <main className="relative min-h-screen" role="main">
       <SEO 
         title={`${post.title} | Heartcode Blog`}
-        description={post.content.substring(0, 160).replace(/#/g, '').trim()}
+        description={post.excerpt}
         image={post.coverImage}
-        schema={schema}
+        schema={generateArticleSchema(post)}
+        type="article"
       />
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-50"
@@ -189,13 +259,13 @@ Thank you for reading this sample blog post!
             </Link>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
             <div className="flex items-center text-muted-foreground">
-              <span>
+              <time dateTime={post.date}>
                 {new Date(post.date).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
                 })}
-              </span>
+              </time>
               <span className="mx-2">•</span>
               <span>{post.author}</span>
             </div>
@@ -209,8 +279,11 @@ Thank you for reading this sample blog post!
           <div className="aspect-[16/9] rounded-lg overflow-hidden mb-8">
             <img 
               src={post.coverImage} 
-              alt={post.title} 
+              alt={`Cover image for article: ${post.title}`} 
               className="w-full h-full object-cover"
+              width="800"
+              height="450"
+              loading="eager"
             />
           </div>
         </div>
@@ -218,7 +291,7 @@ Thank you for reading this sample blog post!
       
       {/* Blog Content */}
       <div className="container mx-auto px-4 pb-16">
-        <motion.div 
+        <motion.article 
           className="max-w-4xl mx-auto prose prose-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -227,7 +300,7 @@ Thank you for reading this sample blog post!
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {post.content}
           </ReactMarkdown>
-        </motion.div>
+        </motion.article>
       </div>
       
       <Footer />
