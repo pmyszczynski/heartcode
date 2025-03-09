@@ -37,6 +37,7 @@ const BlogPost = () => {
             title: "Sample Blog Post",
             date: "2024-04-25",
             author: "Heartcode Team",
+            excerpt: "This is a sample blog post excerpt.", // Added the missing excerpt property
             coverImage: "/placeholder.svg",
             content: `
 # ${slug.split('-').join(' ').replace(/\b\w/g, l => l.toUpperCase())}
