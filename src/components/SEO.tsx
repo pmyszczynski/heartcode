@@ -21,6 +21,13 @@ export const SEO = ({
   const currentUrl = `https://heartcode.io${location.pathname}`;
 
   useEffect(() => {
+    // Track page view in Google Analytics
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('config', 'G-MEASUREMENT_ID', {
+        page_path: location.pathname,
+      });
+    }
+
     // Update meta tags
     document.title = title;
     document.querySelector('meta[name="description"]')?.setAttribute('content', description);
@@ -47,7 +54,7 @@ export const SEO = ({
       script.text = JSON.stringify(schema);
       document.head.appendChild(script);
     }
-  }, [title, description, image, schema, currentUrl, type]);
+  }, [title, description, image, schema, currentUrl, type, location.pathname]);
 
   return null;
 };
