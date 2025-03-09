@@ -23,7 +23,7 @@ export const SEO = ({
   useEffect(() => {
     // Track page view in Google Analytics
     if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('config', 'G-MEASUREMENT_ID', {
+      window.gtag('config', 'G-MQ1FDGCLXY', {
         page_path: location.pathname,
       });
     }
