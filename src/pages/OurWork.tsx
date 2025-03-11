@@ -10,8 +10,9 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
   link?: string;
+  image?: string;
 }
 
 const OurWork = () => {
@@ -87,7 +88,7 @@ const projects: Project[] = [
     id: 3,
     title: "Bennabis Health",
     description: "A tech-enabled healthcare platform focused on making medical cannabis more accessible and affordable",
-    icon: Leaf,
+    image: "/assets/bennabis-health.jpg",
     link: "https://bennabishealth.com/"
   },
   {

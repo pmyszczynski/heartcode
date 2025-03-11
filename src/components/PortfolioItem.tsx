@@ -7,21 +7,32 @@ interface PortfolioItemProps {
   id: number;
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
   index: number;
   link?: string;
+  image?: string;
 }
 
-export const PortfolioItem = ({ title, description, icon: Icon, index, link }: PortfolioItemProps) => {
+export const PortfolioItem = ({ title, description, icon: Icon, index, link, image }: PortfolioItemProps) => {
   const content = (
-    <div className="w-full h-64 relative group-hover:scale-105 transition-transform duration-300 bg-card border shadow-sm">
+    <div 
+      className={cn(
+        "w-full h-64 relative group-hover:scale-105 transition-transform duration-300 bg-card border shadow-sm",
+        image && "bg-cover bg-center"
+      )}
+      style={image ? { backgroundImage: `url(${image})` } : {}}
+    >
       {link && (
         <div className="absolute top-2 right-2 z-10 p-1.5 bg-primary/10 rounded-full">
           <ExternalLink className="w-4 h-4 text-primary" aria-label="External link" />
         </div>
       )}
-      <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-        {Icon && (
+      
+      <div className={cn(
+        "absolute inset-0 flex flex-col items-center justify-center p-6",
+        image && "bg-black/60 text-white"
+      )}>
+        {Icon && !image && (
           <div 
             className="mb-4 p-3 rounded-lg bg-primary/10"
             role="img"
@@ -30,10 +41,18 @@ export const PortfolioItem = ({ title, description, icon: Icon, index, link }: P
             <Icon className="w-8 h-8 text-primary" />
           </div>
         )}
-        <h3 className="text-xl font-semibold mb-2 text-card-foreground flex items-center gap-2">
+        <h3 className={cn(
+          "text-xl font-semibold mb-2 flex items-center gap-2",
+          image ? "text-white" : "text-card-foreground"
+        )}>
           {title}
         </h3>
-        <p className="text-muted-foreground text-center">{description}</p>
+        <p className={cn(
+          "text-center",
+          image ? "text-white/80" : "text-muted-foreground"
+        )}>
+          {description}
+        </p>
       </div>
     </div>
   );
