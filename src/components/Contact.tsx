@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -5,9 +6,10 @@ import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
 import { useState } from "react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { useTranslation } from "react-i18next";
 
 export const Contact = () => {
+  const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -54,10 +56,10 @@ export const Contact = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Let's Start Something Special
+              {t('contact.title')}
             </h2>
             <p className="text-secondary-foreground/80">
-              Have a project in mind? We'd love to hear about it. Drop us a message, and we'll get back to you within 24 hours.
+              {t('contact.subtitle')}
             </p>
           </motion.div>
           
@@ -71,39 +73,39 @@ export const Contact = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-medium">Your Name</label>
+                <label className="text-sm font-medium">{t('contact.form.name')}</label>
                 <Input
                   name="user_name"
-                  placeholder="John Doe"
+                  placeholder={t('contact.form.namePlaceholder')}
                   required
                   className="bg-secondary-foreground/5 border-secondary-foreground/10"
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium">Email</label>
+                <label className="text-sm font-medium">{t('contact.form.email')}</label>
                 <Input
                   name="user_email"
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                   required
                   className="bg-secondary-foreground/5 border-secondary-foreground/10"
                 />
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium">Project Type</label>
+              <label className="text-sm font-medium">{t('contact.form.projectType')}</label>
               <Input
                 name="project_type"
-                placeholder="Website, E-commerce, or something else?"
+                placeholder={t('contact.form.projectTypePlaceholder')}
                 required
                 className="bg-secondary-foreground/5 border-secondary-foreground/10"
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium">Tell us about your project</label>
+              <label className="text-sm font-medium">{t('contact.form.message')}</label>
               <Textarea
                 name="message"
-                placeholder="Share your ideas, goals, and timeline..."
+                placeholder={t('contact.form.messagePlaceholder')}
                 required
                 className="bg-secondary-foreground/5 border-secondary-foreground/10 min-h-[150px]"
               />
@@ -114,7 +116,7 @@ export const Contact = () => {
               className="w-full rounded-full"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Let's Make Something Amazing 🚀"}
+              {isSubmitting ? t('contact.form.sending') : t('contact.form.button')}
             </Button>
           </motion.form>
         </div>

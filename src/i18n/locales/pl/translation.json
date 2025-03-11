@@ -1,0 +1,126 @@
+
+{
+  "hero": {
+    "greeting": "Cześć! 👋 Jesteśmy heartcode",
+    "title": "Wspólnie urzeczywistnimy Twoją wizję",
+    "description": "Nie jesteśmy kolejną agencją – jesteśmy Twoim oddanym partnerem w tworzeniu znaczących doświadczeń cyfrowych, które trafiają do Twojej publiczności i rozwijają Twój biznes.",
+    "buttons": {
+      "chat": "Porozmawiajmy ☕️",
+      "work": "Zobacz nasze prace"
+    }
+  },
+  "services": {
+    "title": "Jak możemy Ci pomóc",
+    "subtitle": "Każdy projekt jest wyjątkowy, a my jesteśmy tu, aby pomóc Ci odnieść sukces w Twojej cyfrowej podróży",
+    "items": {
+      "design": {
+        "title": "Projektowanie stron",
+        "description": "Będziemy ściśle współpracować z Tobą, aby stworzyć projekt, który doskonale oddaje osobowość Twojej marki i łączy się z Twoją publicznością."
+      },
+      "development": {
+        "title": "Programowanie",
+        "description": "Nasi programiści starannie piszą każdą linijkę kodu, zapewniając, że Twoja strona internetowa jest nie tylko piękna, ale także błyskawicznie szybka i niezawodna."
+      },
+      "seo": {
+        "title": "SEO/SEM",
+        "description": "Sprawmy, by Twoja marka została zauważona! Pomożemy Ci dotrzeć do właściwych osób dzięki naszym dopasowanym strategiom optymalizacji wyszukiwarek."
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Gotowy na sprzedaż online? Zbudujemy dla Ciebie sklep, który jest zarówno piękny, jak i łatwy w użyciu, pomagając Ci przekształcić odwiedzających w zadowolonych klientów."
+      }
+    }
+  },
+  "whyChooseUs": {
+    "title": "Dlaczego warto wybrać heartcode",
+    "subtitle": "Wnosimy unikalną wartość do każdego projektu dzięki naszemu zaangażowaniu w doskonałość i innowacyjność 🚀",
+    "features": {
+      "technology": {
+        "title": "Najnowsza technologia",
+        "description": "Wykorzystujemy najnowsze narzędzia i technologie, aby budować solidne, skalowalne rozwiązania, które wytrzymują próbę czasu."
+      },
+      "strategy": {
+        "title": "Strategia zorientowana na wyniki",
+        "description": "Nasze podejście koncentruje się na dostarczaniu wymiernych wyników, które są zgodne z celami biznesowymi i napędzają wzrost."
+      },
+      "collaboration": {
+        "title": "Ścisła współpraca",
+        "description": "Pracujemy ramię w ramię z naszymi klientami, analizując ich unikalne potrzeby, aby tworzyć dostosowane rozwiązania, które przekraczają oczekiwania."
+      }
+    }
+  },
+  "timeline": {
+    "title": "Jak pracujemy",
+    "subtitle": "Nasz proces jest elastyczny i dostosowuje się do Twoich potrzeb, ale oto ogólny zarys tego, jak będziemy współpracować, aby ożywić Twoją wizję 💫",
+    "steps": {
+      "discovery": {
+        "title": "Odkrywanie i planowanie",
+        "description": "Zaczynamy od zrozumienia Twoich unikalnych wyzwań i zakresu projektu. Każdy biznes jest inny, a my poświęcamy czas, aby naprawdę zrozumieć Twoje konkretne potrzeby."
+      },
+      "solution": {
+        "title": "Dopasowane rozwiązanie",
+        "description": "Na podstawie Twoich wymagań tworzymy niestandardowe rozwiązanie, które idealnie pasuje do potrzeb i celów Twojego biznesu."
+      },
+      "implementation": {
+        "title": "Implementacja",
+        "description": "Podczas rozwoju utrzymujemy stałą komunikację, aby upewnić się, że wszystko jest zgodne z Twoją wizją. Bez niespodzianek, tylko płynny postęp."
+      },
+      "verification": {
+        "title": "Weryfikacja",
+        "description": "Twoja opinia i akceptacja są kluczowe. Dokładnie testujemy i weryfikujemy, czy wszystko spełnia Twoje oczekiwania."
+      },
+      "partnership": {
+        "title": "Ciągłe partnerstwo",
+        "description": "Nasza relacja nie kończy się na uruchomieniu. Zapewniamy gwarancję, wsparcie SLA i zawsze jesteśmy tutaj dla przyszłej ewolucji Twojego projektu."
+      }
+    }
+  },
+  "contact": {
+    "title": "Rozpocznijmy coś wyjątkowego",
+    "subtitle": "Masz w głowie projekt? Chętnie o nim usłyszymy. Zostaw nam wiadomość, a odezwiemy się do Ciebie w ciągu 24 godzin.",
+    "form": {
+      "name": "Twoje imię",
+      "namePlaceholder": "Jan Kowalski",
+      "email": "Email",
+      "emailPlaceholder": "jan@przykład.com",
+      "projectType": "Typ projektu",
+      "projectTypePlaceholder": "Strona internetowa, E-commerce, czy coś innego?",
+      "message": "Opowiedz nam o swoim projekcie",
+      "messagePlaceholder": "Podziel się swoimi pomysłami, celami i harmonogramem...",
+      "button": "Stwórzmy coś niesamowitego 🚀",
+      "sending": "Wysyłanie..."
+    }
+  },
+  "footer": {
+    "company": {
+      "description": "Tworzymy wyjątkowe doświadczenia cyfrowe poprzez innowacyjne rozwiązania rozwoju stron internetowych."
+    },
+    "services": {
+      "title": "Usługi",
+      "webDev": "Tworzenie stron",
+      "uiUx": "UI/UX Design",
+      "techConsulting": "Doradztwo techniczne",
+      "seo": "SEO/SEM"
+    },
+    "quickLinks": {
+      "title": "Szybkie linki",
+      "work": "Nasze prace",
+      "about": "O nas",
+      "contact": "Kontakt",
+      "process": "Proces"
+    },
+    "contactUs": {
+      "title": "Kontakt"
+    },
+    "copyright": "Wszelkie prawa zastrzeżone."
+  },
+  "ourWork": {
+    "title": "Nasze prace",
+    "backToHome": "Powrót do strony głównej",
+    "description": "Sprawdź nasze portfolio udanych projektów, w których pomogliśmy firmom transformować ich cyfrową obecność."
+  },
+  "languageSwitcher": {
+    "en": "English",
+    "pl": "Polski"
+  }
+}

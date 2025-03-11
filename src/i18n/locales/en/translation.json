@@ -1,0 +1,126 @@
+
+{
+  "hero": {
+    "greeting": "Hi there! 👋 We're heartcode",
+    "title": "Let's bring your vision to life together",
+    "description": "We're not just another agency – we're your dedicated partners in creating meaningful digital experiences that resonate with your audience and grow your business.",
+    "buttons": {
+      "chat": "Let's Chat ☕️",
+      "work": "See Our Work"
+    }
+  },
+  "services": {
+    "title": "How We Can Help You",
+    "subtitle": "Every project is unique, and we're here to help you succeed in your digital journey",
+    "items": {
+      "design": {
+        "title": "Web Design",
+        "description": "We'll work closely with you to create a design that perfectly captures your brand's personality and connects with your audience."
+      },
+      "development": {
+        "title": "Development",
+        "description": "Our developers craft every line of code with care, ensuring your website is not just beautiful, but blazing fast and reliable."
+      },
+      "seo": {
+        "title": "SEO/SEM",
+        "description": "Let's get your brand noticed! We'll help you reach the right people with our tailored search optimization strategies."
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Ready to sell online? We'll build you a store that's both beautiful and easy to use, helping you turn visitors into happy customers."
+      }
+    }
+  },
+  "whyChooseUs": {
+    "title": "Why Choose heartcode",
+    "subtitle": "We bring unique value to every project through our commitment to excellence and innovation 🚀",
+    "features": {
+      "technology": {
+        "title": "Cutting-Edge Technology",
+        "description": "We leverage the latest tools and technologies to build robust, scalable solutions that stand the test of time."
+      },
+      "strategy": {
+        "title": "Result-Driven Strategy",
+        "description": "Our approach is focused on delivering measurable results that align with your business objectives and drive growth."
+      },
+      "collaboration": {
+        "title": "Close Collaboration",
+        "description": "We work hand-in-hand with our clients, analyzing their unique needs to craft tailored solutions that exceed expectations."
+      }
+    }
+  },
+  "timeline": {
+    "title": "How We Work",
+    "subtitle": "Our process is flexible and adapts to your needs, but here's generally how we'll work together to bring your vision to life 💫",
+    "steps": {
+      "discovery": {
+        "title": "Discovery & Planning",
+        "description": "We start by understanding your unique challenges and project scope. Every business is different, and we take time to truly grasp your specific needs."
+      },
+      "solution": {
+        "title": "Tailored Solution",
+        "description": "Based on your requirements, we craft a custom solution that perfectly fits your business needs and goals."
+      },
+      "implementation": {
+        "title": "Implementation",
+        "description": "During development, we maintain constant communication to ensure everything aligns with your vision. No surprises, just smooth progress."
+      },
+      "verification": {
+        "title": "Verification",
+        "description": "Your feedback and approval are crucial. We thoroughly test and verify everything meets your expectations."
+      },
+      "partnership": {
+        "title": "Ongoing Partnership",
+        "description": "Our relationship doesn't end at launch. We provide warranty, SLA support, and are always here for future evolution of your project."
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's Start Something Special",
+    "subtitle": "Have a project in mind? We'd love to hear about it. Drop us a message, and we'll get back to you within 24 hours.",
+    "form": {
+      "name": "Your Name",
+      "namePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "john@example.com",
+      "projectType": "Project Type",
+      "projectTypePlaceholder": "Website, E-commerce, or something else?",
+      "message": "Tell us about your project",
+      "messagePlaceholder": "Share your ideas, goals, and timeline...",
+      "button": "Let's Make Something Amazing 🚀",
+      "sending": "Sending..."
+    }
+  },
+  "footer": {
+    "company": {
+      "description": "Crafting exceptional digital experiences through innovative web development solutions."
+    },
+    "services": {
+      "title": "Services",
+      "webDev": "Web Development",
+      "uiUx": "UI/UX Design",
+      "techConsulting": "Tech Consulting",
+      "seo": "SEO/SEM"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "work": "Our Work",
+      "about": "About Us",
+      "contact": "Contact",
+      "process": "Process"
+    },
+    "contactUs": {
+      "title": "Contact Us"
+    },
+    "copyright": "All rights reserved."
+  },
+  "ourWork": {
+    "title": "Our Work",
+    "backToHome": "Back to Home",
+    "description": "Explore our portfolio of successful projects where we've helped businesses transform their digital presence."
+  },
+  "languageSwitcher": {
+    "en": "English",
+    "pl": "Polski"
+  }
+}

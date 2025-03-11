@@ -5,6 +5,7 @@ import { ArrowLeft, Cpu, Globe, BookOpen, BarChart, Users, LucideIcon, Leaf } fr
 import { Link } from "react-router-dom";
 import { PortfolioItem } from "@/components/PortfolioItem";
 import { SEO } from "@/components/SEO";
+import { useTranslation } from "react-i18next";
 
 interface Project {
   id: number;
@@ -18,11 +19,13 @@ interface Project {
 }
 
 const OurWork = () => {
+  const { t } = useTranslation();
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Our Work - Heartcode Portfolio",
-    "description": "Explore our portfolio of successful projects where we've helped businesses transform their digital presence.",
+    "description": t('ourWork.description'),
     "url": "https://heartcode.io/our-work",
     "mainEntity": {
       "@type": "ItemList",
@@ -40,7 +43,7 @@ const OurWork = () => {
     <div className="min-h-screen py-16 px-4">
       <SEO 
         title="Our Work - Heartcode Portfolio"
-        description="Explore our portfolio of successful projects where we've helped businesses transform their digital presence."
+        description={t('ourWork.description')}
         schema={schema}
       />
       <div className="container mx-auto">
@@ -53,12 +56,12 @@ const OurWork = () => {
           <Link to="/">
             <Button variant="ghost" className="mb-8">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
+              {t('ourWork.backToHome')}
             </Button>
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Work</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('ourWork.title')}</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-            Explore our portfolio of successful projects where we've helped businesses transform their digital presence.
+            {t('ourWork.description')}
           </p>
         </motion.div>
 

@@ -1,35 +1,34 @@
 
 import { Code, Palette, Search, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
-
-const services = [
-  {
-    icon: Palette,
-    title: "Web Design",
-    description:
-      "We'll work closely with you to create a design that perfectly captures your brand's personality and connects with your audience.",
-  },
-  {
-    icon: Code,
-    title: "Development",
-    description:
-      "Our developers craft every line of code with care, ensuring your website is not just beautiful, but blazing fast and reliable.",
-  },
-  {
-    icon: Search,
-    title: "SEO/SEM",
-    description:
-      "Let's get your brand noticed! We'll help you reach the right people with our tailored search optimization strategies.",
-  },
-  {
-    icon: ShoppingBag,
-    title: "E-commerce",
-    description:
-      "Ready to sell online? We'll build you a store that's both beautiful and easy to use, helping you turn visitors into happy customers.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export const Services = () => {
+  const { t } = useTranslation();
+  
+  const services = [
+    {
+      icon: Palette,
+      title: t('services.items.design.title'),
+      description: t('services.items.design.description'),
+    },
+    {
+      icon: Code,
+      title: t('services.items.development.title'),
+      description: t('services.items.development.description'),
+    },
+    {
+      icon: Search,
+      title: t('services.items.seo.title'),
+      description: t('services.items.seo.description'),
+    },
+    {
+      icon: ShoppingBag,
+      title: t('services.items.ecommerce.title'),
+      description: t('services.items.ecommerce.description'),
+    },
+  ];
+
   return (
     <section id="services" className="py-24 bg-muted">
       <div className="container mx-auto px-4">
@@ -41,7 +40,7 @@ export const Services = () => {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            How We Can Help You
+            {t('services.title')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -50,7 +49,7 @@ export const Services = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-muted-foreground max-w-2xl mx-auto"
           >
-            Every project is unique, and we're here to help you succeed in your digital journey
+            {t('services.subtitle')}
           </motion.p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

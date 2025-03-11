@@ -1,36 +1,39 @@
 
 import { motion } from "framer-motion";
 import { Clock, FileSearch, Wrench, CheckCircle, HeartHandshake } from "lucide-react";
-
-const steps = [
-  {
-    icon: FileSearch,
-    title: "Discovery & Planning",
-    description: "We start by understanding your unique challenges and project scope. Every business is different, and we take time to truly grasp your specific needs."
-  },
-  {
-    icon: Wrench,
-    title: "Tailored Solution",
-    description: "Based on your requirements, we craft a custom solution that perfectly fits your business needs and goals."
-  },
-  {
-    icon: Clock,
-    title: "Implementation",
-    description: "During development, we maintain constant communication to ensure everything aligns with your vision. No surprises, just smooth progress."
-  },
-  {
-    icon: CheckCircle,
-    title: "Verification",
-    description: "Your feedback and approval are crucial. We thoroughly test and verify everything meets your expectations."
-  },
-  {
-    icon: HeartHandshake,
-    title: "Ongoing Partnership",
-    description: "Our relationship doesn't end at launch. We provide warranty, SLA support, and are always here for future evolution of your project."
-  }
-];
+import { useTranslation } from "react-i18next";
 
 export const Timeline = () => {
+  const { t } = useTranslation();
+  
+  const steps = [
+    {
+      icon: FileSearch,
+      title: t('timeline.steps.discovery.title'),
+      description: t('timeline.steps.discovery.description')
+    },
+    {
+      icon: Wrench,
+      title: t('timeline.steps.solution.title'),
+      description: t('timeline.steps.solution.description')
+    },
+    {
+      icon: Clock,
+      title: t('timeline.steps.implementation.title'),
+      description: t('timeline.steps.implementation.description')
+    },
+    {
+      icon: CheckCircle,
+      title: t('timeline.steps.verification.title'),
+      description: t('timeline.steps.verification.description')
+    },
+    {
+      icon: HeartHandshake,
+      title: t('timeline.steps.partnership.title'),
+      description: t('timeline.steps.partnership.description')
+    }
+  ];
+
   return (
     <section id="timeline" className="py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -41,9 +44,9 @@ export const Timeline = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">How We Work</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('timeline.title')}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Our process is flexible and adapts to your needs, but here's generally how we'll work together to bring your vision to life 💫
+            {t('timeline.subtitle')}
           </p>
         </motion.div>
 

@@ -1,8 +1,10 @@
 
 import { Link } from "react-router-dom";
 import { Mail, Globe, Copyright } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -13,35 +15,35 @@ export const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Heartcode</h3>
             <p className="text-muted-foreground text-sm">
-              Crafting exceptional digital experiences through innovative web development solutions.
+              {t('footer.company.description')}
             </p>
           </div>
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Services</h3>
+            <h3 className="font-semibold text-lg">{t('footer.services.title')}</h3>
             <ul className="space-y-2">
-              <li><a href="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">Web Development</a></li>
-              <li><a href="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">UI/UX Design</a></li>
-              <li><Link to="/tech-consulting" className="text-sm text-muted-foreground hover:text-primary transition-colors">Tech Consulting</Link></li>
-              <li><a href="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO/SEM</a></li>
+              <li><a href="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.services.webDev')}</a></li>
+              <li><a href="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.services.uiUx')}</a></li>
+              <li><Link to="/tech-consulting" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.services.techConsulting')}</Link></li>
+              <li><a href="/#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.services.seo')}</a></li>
             </ul>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Quick Links</h3>
+            <h3 className="font-semibold text-lg">{t('footer.quickLinks.title')}</h3>
             <ul className="space-y-2">
-              <li><Link to="/our-work" className="text-sm text-muted-foreground hover:text-primary transition-colors">Our Work</Link></li>
-              <li><a href="/#why-choose-us" className="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="/#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
-              <li><a href="/#timeline" className="text-sm text-muted-foreground hover:text-primary transition-colors">Process</a></li>
+              <li><Link to="/our-work" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.quickLinks.work')}</Link></li>
+              <li><a href="/#why-choose-us" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.quickLinks.about')}</a></li>
+              <li><a href="/#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.quickLinks.contact')}</a></li>
+              <li><a href="/#timeline" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t('footer.quickLinks.process')}</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Contact Us</h3>
+            <h3 className="font-semibold text-lg">{t('footer.contactUs.title')}</h3>
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
@@ -62,7 +64,7 @@ export const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-border mt-12 pt-8 flex items-center justify-center text-sm text-muted-foreground">
           <Copyright className="h-4 w-4 mr-2" />
-          <p>{currentYear} Heartcode. All rights reserved.</p>
+          <p>{currentYear} Heartcode. {t('footer.copyright')}</p>
         </div>
       </div>
     </footer>
