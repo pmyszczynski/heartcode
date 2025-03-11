@@ -127,6 +127,7 @@ const projects: Project[] = [
     title: "Fimble",
     description: "Invoicing and accounts receivable automation for businesses that struggle to get paid on time",
     icon: Cpu,
+    link: "https://www.fimble.co.uk/"
   },
   {
     id: 10,
