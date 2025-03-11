@@ -90,7 +90,7 @@ const projects: Project[] = [
     id: 3,
     title: "Bennabis Health",
     description: "A tech-enabled healthcare platform focused on making medical cannabis more accessible and affordable",
-    iconImage: "/assets/bennabis-health.jpg",
+    icon: Leaf,
     link: "https://bennabishealth.com/"
   },
   {
