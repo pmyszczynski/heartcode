@@ -11,6 +11,7 @@ interface Project {
   title: string;
   description: string;
   icon: LucideIcon;
+  link?: string;
 }
 
 const OurWork = () => {
@@ -73,7 +74,8 @@ const projects: Project[] = [
     id: 1,
     title: "Agrosmart",
     description: "Smart agricultural monitoring system with real-time tracking and analytics",
-    icon: Cpu
+    icon: Cpu,
+    link: "https://agrosmart.pro/www/"
   },
   {
     id: 2,
