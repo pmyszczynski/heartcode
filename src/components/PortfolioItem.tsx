@@ -15,6 +15,11 @@ interface PortfolioItemProps {
 export const PortfolioItem = ({ title, description, icon: Icon, index, link }: PortfolioItemProps) => {
   const content = (
     <div className="w-full h-64 relative group-hover:scale-105 transition-transform duration-300 bg-card border shadow-sm">
+      {link && (
+        <div className="absolute top-2 right-2 z-10 p-1.5 bg-primary/10 rounded-full">
+          <ExternalLink className="w-4 h-4 text-primary" aria-label="External link" />
+        </div>
+      )}
       <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
         {Icon && (
           <div 
@@ -27,9 +32,6 @@ export const PortfolioItem = ({ title, description, icon: Icon, index, link }: P
         )}
         <h3 className="text-xl font-semibold mb-2 text-card-foreground flex items-center gap-2">
           {title}
-          {link && (
-            <ExternalLink className="w-4 h-4 text-primary" aria-label="External link" />
-          )}
         </h3>
         <p className="text-muted-foreground text-center">{description}</p>
       </div>
