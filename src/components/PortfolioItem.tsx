@@ -11,9 +11,10 @@ interface PortfolioItemProps {
   index: number;
   link?: string;
   image?: string;
+  iconImage?: string;
 }
 
-export const PortfolioItem = ({ title, description, icon: Icon, index, link, image }: PortfolioItemProps) => {
+export const PortfolioItem = ({ title, description, icon: Icon, index, link, image, iconImage }: PortfolioItemProps) => {
   const content = (
     <div 
       className={cn(
@@ -32,7 +33,16 @@ export const PortfolioItem = ({ title, description, icon: Icon, index, link, ima
         "absolute inset-0 flex flex-col items-center justify-center p-6",
         image && "bg-black/60 text-white"
       )}>
-        {Icon && !image && (
+        {iconImage && (
+          <div 
+            className="mb-4 p-3 rounded-lg bg-primary/10 flex items-center justify-center"
+            role="img"
+            aria-label={`${title} icon`}
+          >
+            <img src={iconImage} alt={`${title} icon`} className="w-8 h-8" />
+          </div>
+        )}
+        {Icon && !iconImage && !image && (
           <div 
             className="mb-4 p-3 rounded-lg bg-primary/10"
             role="img"
