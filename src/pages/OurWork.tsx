@@ -1,11 +1,10 @@
-
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, Cpu, Globe, BookOpen, BarChart, Users, LucideIcon, Leaf } from "lucide-react";
+import { Cpu, Globe, BookOpen, BarChart, Users, LucideIcon, Leaf } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PortfolioItem } from "@/components/PortfolioItem";
 import { SEO } from "@/components/SEO";
 import { useTranslation } from "react-i18next";
+import { BackToHome } from "@/components/BackToHome";
 
 interface Project {
   id: number;
@@ -53,12 +52,7 @@ const OurWork = () => {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <Link to="/">
-            <Button variant="ghost" className="mb-8">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              {t('ourWork.backToHome')}
-            </Button>
-          </Link>
+          <BackToHome />
           <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('ourWork.title')}</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mb-8">
             {t('ourWork.description')}

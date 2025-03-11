@@ -119,6 +119,13 @@
     "backToHome": "Powrót do strony głównej",
     "description": "Sprawdź nasze portfolio udanych projektów, w których pomogliśmy firmom transformować ich cyfrową obecność."
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Opracowania i aktualizacje na temat tworzenia stron internetowych, projektowania i technologii od zespołu Heartcode"
+  },
+  "common": {
+    "backToHome": "Powrót do strony głównej"
+  },
   "languageSwitcher": {
     "en": "English",
     "pl": "Polski"

@@ -119,6 +119,13 @@
     "backToHome": "Back to Home",
     "description": "Explore our portfolio of successful projects where we've helped businesses transform their digital presence."
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Insights and updates on web development, design, and technology from the Heartcode team"
+  },
+  "common": {
+    "backToHome": "Back to Home"
+  },
   "languageSwitcher": {
     "en": "English",
     "pl": "Polski"

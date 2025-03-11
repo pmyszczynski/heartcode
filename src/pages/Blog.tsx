@@ -3,10 +3,13 @@ import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { BlogHeader } from "@/components/blog/BlogHeader";
 import { BlogList } from "@/components/blog/BlogList";
+import { BackToHome } from "@/components/BackToHome";
 import { useEffect } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Blog = () => {
+  const { t } = useTranslation();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -22,7 +25,7 @@ const Blog = () => {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "Heartcode Blog",
-    "description": "Insights and updates on web development, design, and technology",
+    "description": t("blog.description"),
     "url": "https://heartcode.io/blog",
     "publisher": {
       "@type": "Organization",
@@ -56,8 +59,8 @@ const Blog = () => {
   return (
     <main className="relative min-h-screen" role="main">
       <SEO 
-        title="Blog | Heartcode - Web Development Agency"
-        description="Insights and updates on web development, design, and technology from the Heartcode team"
+        title={`${t("blog.title")} | Heartcode - Web Development Agency`}
+        description={t("blog.description")}
         schema={blogSchema}
         type="blog"
       />
@@ -67,6 +70,9 @@ const Blog = () => {
         role="progressbar"
         aria-label="Page scroll progress"
       />
+      <div className="container mx-auto px-4 pt-8">
+        <BackToHome />
+      </div>
       <BlogHeader />
       <BlogList />
       <Footer />
