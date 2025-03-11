@@ -101,6 +101,7 @@ const projects: Project[] = [
     title: "Outfilm",
     description: "A feature-rich streaming application for Samsung Tizen TVs for LGBTQ+ communities",
     icon: Users,
+    link: "https://www.outfilm.pl/"
   },
   {
     id: 6,
