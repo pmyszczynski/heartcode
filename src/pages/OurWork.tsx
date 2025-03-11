@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Cpu, Globe, BookOpen, BarChart, Users, LucideIcon } from "lucide-react";
+import { ArrowLeft, Cpu, Globe, BookOpen, BarChart, Users, LucideIcon, Leaf } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PortfolioItem } from "@/components/PortfolioItem";
 import { SEO } from "@/components/SEO";
@@ -87,7 +87,7 @@ const projects: Project[] = [
     id: 3,
     title: "Bennabis Health",
     description: "A tech-enabled healthcare platform focused on making medical cannabis more accessible and affordable",
-    icon: BarChart,
+    icon: Leaf,
     link: "https://bennabishealth.com/"
   },
   {
