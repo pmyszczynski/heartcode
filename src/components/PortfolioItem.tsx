@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { LucideIcon } from "lucide-react";
+import { LucideIcon, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface PortfolioItemProps {
@@ -25,7 +25,12 @@ export const PortfolioItem = ({ title, description, icon: Icon, index, link }: P
             <Icon className="w-8 h-8 text-primary" />
           </div>
         )}
-        <h3 className="text-xl font-semibold mb-2 text-card-foreground">{title}</h3>
+        <h3 className="text-xl font-semibold mb-2 text-card-foreground flex items-center gap-2">
+          {title}
+          {link && (
+            <ExternalLink className="w-4 h-4 text-primary" aria-label="External link" />
+          )}
+        </h3>
         <p className="text-muted-foreground text-center">{description}</p>
       </div>
     </div>
@@ -36,7 +41,10 @@ export const PortfolioItem = ({ title, description, icon: Icon, index, link }: P
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative overflow-hidden rounded-lg cursor-pointer"
+      className={cn(
+        "group relative overflow-hidden rounded-lg cursor-pointer",
+        link && "ring-1 ring-primary/20 hover:ring-primary/50 transition-all"
+      )}
       role="article"
       aria-label={`Portfolio item: ${title}`}
     >
