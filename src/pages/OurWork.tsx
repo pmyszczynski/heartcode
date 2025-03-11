@@ -108,6 +108,7 @@ const projects: Project[] = [
     title: "The Coaching Manual",
     description: "A platform for football coaches to create and share training sessions, tactics, and strategies",
     icon: BookOpen,
+    link: "https://www.thecoachingmanual.com/"
   },
   {
     id: 7,
